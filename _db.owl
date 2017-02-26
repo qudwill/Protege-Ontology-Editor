@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#"
+     xml:base="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2">
+        <rdfs:comment>Онтология к дисциплине &quot;Базы Данных&quot;</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#BLOB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#BLOB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>BLOB или ТЕХТ с максимальной длиной 65535 (2^16 - 1) символов.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#CHAR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#CHAR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазон длины от 1 до 255 символов. Завершающие пробелы удаляются, когда значение извлекается. Значения CHAR сортируются и сравниваются без учета регистра в зависимости от кодировки по умолчанию, если не установлен флаг BINARY.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Дата в диапазоне от «1000-01-01» до «9999-12-31». MySQL хранит поле типа DATE в виде «YYYY-MM-DD» (ГГГГ-ММ-ДД).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATETIME -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATETIME">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Допустимые диапазоны от «1000-01-01 00:00:00» до «9999-12-31 23:59:59». MySQL хранит поле типа DATETIME в виде «YYYY-MM-DD HH:MM:SS» (ГГГГ-ММ-ДД ЧЧ-ММ-СС).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DECIMAL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DECIMAL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Работает подобно типу данных CHAR: «распакованный» означает, что число хранится в виде строки, используя один символ для каждой цифры-значения. Символ десятичной запятой и символ отрицательного числа &quot;-&quot; не учитывается в длину. Если десятичное значение равно 0, значение не будет иметь десятичной запятой или дробной части. Максимальный размер для DECIMAL значение такое же, как и для DOUBLE, но фактический диапазон для данного столбца DECIMAL может быть ограничен в выборе длины и десятичные дроби.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DOUBLE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DOUBLE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазоны от -1.7976931348623157E+308 до -2.2250738585072014E-308, 0 и 2.2250738585072014E-308 до 1.7976931348623157E+308. Если количество знаков после запятой не установлени или 25 &lt;= количество знаков &lt;= 53 означает числоа с плавающей запятой двойной точности.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#FLOAT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#FLOAT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазоны от –3.402823466E+38 до –1.175494351E-38, 0 и 1.175494351E-38 до 3.402823466E+38. Если количество знаков после запятой не установлено или &lt;= 24 это число с плавающей запятой одинарной точности.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#INT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#INT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазон числа со знаком от –2147483648 до 2147483647. Диапазон числа без знака (unsigned) от 0 до 4294967295.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MS_SQL_Server -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MS_SQL_Server">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД"/>
+        <rdfs:comment>Microsoft SQL Server — система управления реляционными базами данных (РСУБД), разработанная корпорацией Microsoft. Основной используемый язык запросов — Transact-SQL, создан совместно Microsoft и Sybase. Transact-SQL является реализацией стандарта ANSI/ISO по структурированному языку запросов (SQL) с расширениями. Используется для работы с базами данных размером от персональных до крупных баз данных масштаба предприятия; конкурирует с другими СУБД в этом сегменте рынка.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MongoDB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MongoDB">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД"/>
+        <rdfs:comment>MongoDB (от англ. humongous — огромный) — документоориентированная система управления базами данных (СУБД) с открытым исходным кодом, не требующая описания схемы таблиц. Написана на языке C++.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MySQL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MySQL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД"/>
+        <rdfs:comment>MySQL (МФА: [maɪ ˌɛskjuːˈɛl])[2] — свободная реляционная система управления базами данных. Разработку и поддержку MySQL осуществляет корпорация Oracle, получившая права на торговую марку вместе с поглощённой Sun Microsystems, которая ранее приобрела шведскую компанию MySQL AB. Продукт распространяется как под GNU General Public License, так и под собственной коммерческой лицензией. Помимо этого, разработчики создают функциональность по заказу лицензионных пользователей. Именно благодаря такому заказу почти в самых ранних версиях появился механизм репликации.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#PostgreSQL -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#PostgreSQL">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД"/>
+        <rdfs:comment>PostgreSQL (произносится «Пост-Грес-Кью-Эл»[4]) — свободная объектно-реляционная система управления базами данных (СУБД).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIME -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIME">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазон от «-838:59:59» до «838:59:59». MySQL хранит поле TIME в виде «HH:MM:SS», но позволяет присваивать значения столбцам TIME с использованием либо строки или числа.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIMESTAMP -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIMESTAMP">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Диапазон от «1970-01-01 00:00:00» до, примерно, 2037 года. MySQL может хранить поле типа TIMESTAMP в видах «YYYYMMDDHHMMSS» (TIMESTAMP(14)), «YYMMDDHHMMSS» (TIMESTAMP(12)), «YYYYMMDD» (TIMESTAMP(8)) и др.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#YEAR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#YEAR">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных"/>
+        <rdfs:comment>Если вы используете 4 цифра, то допустимые значения 1901-2155, и 0000. Если 2 цифры, то 1970-2069 (70-69). MySQL хранит значения поля YEAR в формате «YYYY».</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Базы_данных -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Базы_данных"/>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#СУБД">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Базы_данных"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Базы_данных"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_данных">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Базы_данных"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#иерархическая -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#иерархическая">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных"/>
+        <rdfs:comment>Иерархическая модель данных — это модель данных, где используется представление базы данных в виде древовидной (иерархической) структуры, состоящей из объектов (данных) различных уровней.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#объектно-ориентированная -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#объектно-ориентированная">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных"/>
+        <rdfs:comment>Объектно-ориентированная база данных (ООБД) — база данных, в которой данные моделируются в виде объектов[1], их атрибутов, методов и классов[2].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#объектно-реляционная -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#объектно-реляционная">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных"/>
+        <rdfs:comment>Объектно-реляционная СУБД (ОРСУБД) — реляционная СУБД (РСУБД), поддерживающая некоторые технологии, реализующие объектно-ориентированный подход: объекты, классы и наследование реализованы в структуре баз данных и языке запросов.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#реляционная -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#реляционная">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных"/>
+        <rdfs:comment>Реляционная модель данных (РМД) — логическая модель данных, прикладная теория построения баз данных, которая является приложением к задачам обработки данных таких разделов математики, как теория множеств и логика первого порядка.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#сетевая -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#сетевая">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#Типы_баз_данных"/>
+        <rdfs:comment>Сетевая модель данных — логическая модель данных, являющаяся расширением иерархического подхода, строгая математическая теория, описывающая структурный аспект, аспект целостности и аспект обработки данных в сетевых базах данных.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#BLOB"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#CHAR"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DATETIME"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DECIMAL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#DOUBLE"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#FLOAT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#INT"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIME"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#TIMESTAMP"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#YEAR"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MS_SQL_Server"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MongoDB"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#MySQL"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/qudwill/ontologies/2017/1/untitled-ontology-2#PostgreSQL"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
